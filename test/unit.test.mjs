@@ -327,7 +327,7 @@ test('parse: url servers captured', () => {
 test('discover: candidates include cursor and claude paths', () => {
   const c = candidateSources('/home/tester', '/work');
   const paths = c.map((x) => x.path);
-  assert.ok(paths.some((p) => p.includes('.cursor/mcp.json')));
+  assert.ok(paths.some((p) => p.endsWith(join('.cursor', 'mcp.json'))));
   assert.ok(paths.some((p) => p.includes('claude_desktop_config.json')));
   assert.ok(paths.some((p) => p === join('/work', '.mcp.json')));
 });
