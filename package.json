@@ -1,0 +1,37 @@
+{
+  "name": "familiar-mcp",
+  "version": "0.1.0",
+  "description": "Audit the familiars your agent keeps. Local MCP config + tool auditor. Zero deps, offline.",
+  "type": "module",
+  "bin": {
+    "familiar": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run -s build && node --test test/",
+    "e2e": "bash test/e2e_local.sh",
+    "bundle": "esbuild dist/cli.js --bundle --platform=node --format=cjs --outfile=dist/familiar.cjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.7.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "security",
+    "audit",
+    "tool-poisoning",
+    "rug-pull",
+    "ai-agents"
+  ],
+  "license": "MIT"
+}
